@@ -9,6 +9,7 @@ const App = () => {
       <Navbar />
       <HeroSection />
       <Restaurants />
+      <Footer />
     </div>
   );
 };
@@ -65,7 +66,6 @@ const HeroSection = () => {
 };
 
 const Cards = ({ food }) => {
-  console.log(food);
   return (
     <div className="card">
       <img src={food.img} alt="card" />
@@ -74,6 +74,42 @@ const Cards = ({ food }) => {
   );
 };
 
+const Restaurants = () => {
+  return (
+    <div className="restaurant">
+      <div className="rest-cards-container">
+        {restaurantsDetails.map((res) => {
+          return <ResCards resData={res} />;
+        })}
+      </div>
+    </div>
+  );
+};
+
+const ResCards = ({ resData }) => {
+  console.log(resData.name);
+  return (
+    <div className="res-card">
+      <div className="res-logo">
+        <img src={resData.img} alt="res-img" />
+      </div>
+      <div className="res-det">
+        <h2 className="res-name">{resData.name}</h2>
+        <h3 className="price">{resData.rupeesForPerson}</h3>
+        <h4 className="rating">⭐Rating:{resData.rating}</h4>
+        <h2 className="location">{resData.location}</h2>
+      </div>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <div className="footer">
+      <h3>© 2026 Rahman Limited</h3>
+    </div>
+  );
+};
 const Fooddata = [
   {
     id: 0,
@@ -109,6 +145,56 @@ const Fooddata = [
     id: 6,
     img: "https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png",
     title: "Burger",
+  },
+];
+const restaurantsDetails = [
+  {
+    id: 0,
+    img: "https://b.zmtcdn.com/data/pictures/0/19011060/7e49c2d5efc8c85e4e26153745bbeb64_o2_featured_v2.jpg?output-format=webp",
+    name: "Satkar Restaurant",
+    rating: 4,
+    rupeesForPerson: "₹600 for two",
+    location: "Chandrayan Gutta",
+  },
+  {
+    id: 1,
+    img: "https://b.zmtcdn.com/data/pictures/4/19011054/45703d43e25917e03fd3bf1c26b2dd11_o2_featured_v2.jpg?output-format=webp",
+    name: "Raimen's Café79",
+    rating: 4,
+    rupeesForPerson: "₹600 for two",
+    location: "Abids",
+  },
+  {
+    id: 2,
+    img: "https://b.zmtcdn.com/data/pictures/0/20448300/69668812bfb59b99bebdca7f017b9428_o2_featured_v2.jpg?output-format=webp",
+    name: "Kathi Junction",
+    rating: 4,
+    rupeesForPerson: "₹600 for two",
+    location: "Attapure",
+  },
+  {
+    id: 4,
+    img: "https://b.zmtcdn.com/data/pictures/0/20660560/bf396605f61974f6204a5a2a88bbf422_o2_featured_v2.jpg?output-format=webp",
+    name: "Hotel Sarkar",
+    rating: 4,
+    rupeesForPerson: "₹600 for two",
+    location: "Jubli Hills",
+  },
+  {
+    id: 5,
+    img: "https://b.zmtcdn.com/data/pictures/5/21784575/0ed73f18b3e78d53ddcc750364f30645_o2_featured_v2.jpg",
+    name: "Top N Town Ice Cream",
+    rating: 4,
+    rupeesForPerson: "₹600 for two",
+    location: "Barkas",
+  },
+  {
+    id: 6,
+    img: "https://b.zmtcdn.com/data/pictures/8/19094738/d4b868a2f44c4bfc6a920b4793d89f71_o2_featured_v2.jpg",
+    name: "Biryani Hotel",
+    rating: 4,
+    rupeesForPerson: "₹600 for two",
+    location: "Banjara Hills",
   },
 ];
 
