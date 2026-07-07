@@ -8,6 +8,7 @@ const App = () => {
     <div>
       <Navbar />
       <HeroSection />
+      <Restaurants />
     </div>
   );
 };
@@ -37,12 +38,38 @@ const Navbar = () => {
   );
 };
 
-const Cards = (props) => {
-  console.log(props);
+const HeroSection = () => {
+  return (
+    <div className="hero-section">
+      <div className="food-container">
+        <div className="food-container-head">
+          <h2>Order our best food options</h2>
+          <div className="left-right-arrows">
+            <div>
+              <FaArrowLeft />
+            </div>
+            <div>
+              <FaArrowRight />
+            </div>
+          </div>
+        </div>
+
+        <div className="main-food-cards-container">
+          {Fooddata.map((food) => {
+            return <Cards food={food} />;
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Cards = ({ food }) => {
+  console.log(food);
   return (
     <div className="card">
-      <img src={props.Fooddata[0].img} alt="card" />
-      <h3>{props.Fooddata[0].title}</h3>
+      <img src={food.img} alt="card" />
+      <h3>{food.title}</h3>
     </div>
   );
 };
@@ -70,8 +97,8 @@ const Fooddata = [
   },
   {
     id: 4,
-    img: "https://b.zmtcdn.com/data/dish_photos/bda/9cdab6d5f275b8d2532e3878134ddbda.jpg",
-    title: "Veg Meal",
+    img: "https://b.zmtcdn.com/data/dish_images/c2f22c42f7ba90d81440a88449f4e5891634806087.png",
+    title: "Rolls",
   },
   {
     id: 5,
@@ -84,34 +111,5 @@ const Fooddata = [
     title: "Burger",
   },
 ];
-
-const HeroSection = () => {
-  return (
-    <div className="hero-section">
-      <div className="food-container">
-        <div className="food-container-head">
-          <h2>Order our best food options</h2>
-          <div className="left-right-arrows">
-            <div>
-              <FaArrowLeft />
-            </div>
-            <div>
-              <FaArrowRight />
-            </div>
-          </div>
-        </div>
-
-        <div className="main-food-cards-container">
-          <Cards Fooddata={Fooddata} />
-          <Cards Fooddata={Fooddata} />
-          <Cards Fooddata={Fooddata} />
-          <Cards Fooddata={Fooddata} />
-          {/*<Cards />
-          <Cards /> */}
-        </div>
-      </div>
-    </div>
-  );
-};
 
 ReactDOM.createRoot(document.querySelector("#root")).render(<App />);
