@@ -1,16 +1,37 @@
+import { imgBaseURL } from "../utils/constant";
+
 const ResCards = ({ resData }) => {
+  const {
+    name,
+    areaName,
+    avgRating,
+    cuisines,
+    cloudinaryImageId,
+    costForTwo,
+    sla,
+  } = resData;
+
   return (
     <div className="res-card">
       <div className="res-logo">
-        <img src={resData.img} alt="res-img" />
+        <img src={`${imgBaseURL}${cloudinaryImageId}`} alt={name} />
       </div>
+
       <div className="res-det">
-        <h3 className="res-name">{resData.name}</h3>
-        <h4 className="price">{resData.rupeesForPerson}</h4>
-        <h4 className="rating">⭐Rating:{resData.rating}</h4>
-        <h2 className="location">{resData.location}</h2>
+        <h3 className="res-name">{name}</h3>
+
+        <h4 className="price">{costForTwo}</h4>
+
+        <h4 className="rating">⭐ {avgRating}</h4>
+
+        <h4 className="cuisines">{cuisines.join(", ")}</h4>
+
+        <h4 className="sla">{sla.deliveryTime} min</h4>
+
+        <p className="location">{areaName}</p>
       </div>
     </div>
   );
 };
+
 export default ResCards;

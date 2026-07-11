@@ -1,30 +1,50 @@
+import { useRef } from "react";
 import { FoodData } from "../utils/FoodData";
 import Cards from "./Cards";
-import { FaArrowLeft } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 const HeroSection = () => {
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({
+      left: -350,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({
+      left: 350,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="hero-section">
+    <section className="hero-section">
       <div className="food-container">
         <div className="food-container-head">
-          <h2>Order our best food options</h2>
+          <h2>Order Our Best Food Options</h2>
+
           <div className="left-right-arrows">
-            <div>
+            <button className="arrow-btn" onClick={scrollLeft}>
               <FaArrowLeft />
-            </div>
-            <div>
+            </button>
+
+            <button className="arrow-btn" onClick={scrollRight}>
               <FaArrowRight />
-            </div>
+            </button>
           </div>
         </div>
 
-        <div className="main-food-cards-container">
-          {FoodData.map((food) => {
-            return <Cards food={food} key={food.id} />;
-          })}
+        <div className="main-food-cards-container" ref={scrollRef}>
+          {FoodData.map((food) => (
+            <Cards key={food.id} food={food} />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
+
 export default HeroSection;
