@@ -219,7 +219,6 @@ body {
 }
 
 /* Restaurant Details*/
-
 .res-det {
   padding: 16px;
 }
@@ -280,7 +279,6 @@ body {
 }
 
 /* Responsive*/
-
 @media (max-width: 992px) {
   .res-card {
     width: 45%;
@@ -399,7 +397,6 @@ body {
 }
 
 /* Animation*/
-
 @keyframes shimmer {
   100% {
     transform: translateX(440px);
@@ -407,7 +404,6 @@ body {
 }
 
 /*Responsive*/
-
 @media (max-width: 992px) {
   .shimmer-card {
     width: 280px;

@@ -6,8 +6,8 @@ import Filter from "./Filter";
 const Body = () => {
   return (
     <div>
-      <Restaurants />
       <HeroSection />
+      <Restaurants />
     </div>
   );
 };

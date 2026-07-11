@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { FoodData } from "../utils/FoodData";
 import Cards from "./Cards";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import HeroSectionShimmer from "./HeroSectionShimmer";
 
 const HeroSection = () => {
   const scrollRef = useRef(null);
