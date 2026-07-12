@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -8,18 +10,37 @@ const Navbar = () => {
           alt="logo"
         />
       </div>
+
       <div className="navElem-conatiner">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
+        <ul className="nav-links">
+          <li>
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/about">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/contact">
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/cart">
+              Cart
+            </Link>
+          </li>
         </ul>
       </div>
+
       <div className="search-container">
-        <input placeholder="Enter Restaurants and Food" />
+        <input type="text" placeholder="Enter Restaurants and Food" />
       </div>
     </div>
   );
 };
+
 export default Navbar;

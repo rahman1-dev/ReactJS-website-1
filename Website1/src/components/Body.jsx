@@ -36,7 +36,7 @@ const Body = () => {
 
   return (
     <div>
-      <HeroSection childData={heroData} />
+      {/* <HeroSection childData={heroData} /> */}
       <Restaurants
         childData={
           data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
