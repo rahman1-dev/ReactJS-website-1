@@ -4,7 +4,8 @@ import Cards from "./Cards";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import HeroSectionShimmer from "./HeroSectionShimmer";
 
-const HeroSection = () => {
+const HeroSection = ({ childData }) => {
+  console.log("Herosection data", childData);
   const scrollRef = useRef(null);
 
   const scrollLeft = () => {
@@ -13,7 +14,6 @@ const HeroSection = () => {
       behavior: "smooth",
     });
   };
-
   const scrollRight = () => {
     scrollRef.current?.scrollBy({
       left: 350,
@@ -22,29 +22,32 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="hero-section">
-      <div className="food-container">
-        <div className="food-container-head">
-          <h2>Order Our Best Food Options</h2>
+    <div>
+      <section className="hero-section">
+        {/* <HeroSectionShimmer /> */}
+        <div className="food-container">
+          <div className="food-container-head">
+            <h2>Order Our Best Food Options</h2>
 
-          <div className="left-right-arrows">
-            <button className="arrow-btn" onClick={scrollLeft}>
-              <FaArrowLeft />
-            </button>
+            <div className="left-right-arrows">
+              <button className="arrow-btn" onClick={scrollLeft}>
+                <FaArrowLeft />
+              </button>
 
-            <button className="arrow-btn" onClick={scrollRight}>
-              <FaArrowRight />
-            </button>
+              <button className="arrow-btn" onClick={scrollRight}>
+                <FaArrowRight />
+              </button>
+            </div>
+          </div>
+
+          <div className="main-food-cards-container" ref={scrollRef}>
+            {childData.map((food) => (
+              <Cards key={food.id} food={food} />
+            ))}
           </div>
         </div>
-
-        <div className="main-food-cards-container" ref={scrollRef}>
-          {FoodData.map((food) => (
-            <Cards key={food.id} food={food} />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

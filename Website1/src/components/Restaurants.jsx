@@ -3,22 +3,8 @@ import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
 import { swiggyURL } from "../utils/constant";
 
-const Restaurants = () => {
-  const [hotelList, setHotelList] = useState([]);
-
-  const fetchApiData = async () => {
-    const response = await fetch(swiggyURL);
-    const data = await response.json();
-
-    setHotelList(
-      data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants || [],
-    );
-  };
-
-  useEffect(() => {
-    fetchApiData();
-  }, []);
+const Restaurants = ({ childData }) => {
+  const hotelList = childData;
 
   return (
     <div className="restaurant">
