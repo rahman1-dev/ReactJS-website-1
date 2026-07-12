@@ -1,9 +1,10 @@
 import React from "react";
+import Shimmer from "./Shimmer";
 
 const Cart = () => {
   return (
     <div>
-      <h1>Cart page</h1>
+      <Shimmer />
     </div>
   );
 };
