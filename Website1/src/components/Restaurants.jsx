@@ -14,7 +14,7 @@ const Restaurants = ({ childData }) => {
           <Shimmer />
         ) : (
           hotelList.map((res) => (
-            <Link to={`/restaurantpage/${res?.info?.id}`} key={res?.info?.id}>
+            <Link className="res-LINK" to={`/restaurantpage/${res?.info?.id}`} key={res?.info?.id}>
               {console.log(res)}
               <ResCards resData={res?.info} />
             </Link>

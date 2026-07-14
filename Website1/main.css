@@ -129,6 +129,7 @@ body {
 }
 
 .food-container {
+  background-color: #ff9000;
   /* background-image: url("background.jpg");
   background-size: cover;  Makes the image cover the whole screen 
   background-repeat: no-repeat;  Prevents the image from repeating
@@ -138,7 +139,7 @@ body {
 
   width: 90%;
   max-width: 1400px;
-  background: #ffffff;
+  /* background: #ffffff; */
   padding: 28px 30px;
   border-radius: 18px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
@@ -221,6 +222,8 @@ body {
   border: 3px solid #fff;
   /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18); */
   transition: all 0.35s ease;
+  background-color: #ff9000;
+  border-radius: 50%;
 }
 
 .card:hover img {
@@ -237,13 +240,15 @@ body {
 }
 
 .card:hover h3 {
-  color: #ff6b00;
+  /* color: #ff6b00; */
+  color: white;
 }
 
 /* HeroSectionShimmer Container Styling--------------------------------------------------------------------------------------- */
 .hero-section-shimmer {
-  min-height: 260px;
-  margin: 25px auto;
+  /* min-height: 260px; */
+  min-height: 200px;
+  margin: 35px auto;
 }
 
 .hero-shimmer-cards {
@@ -262,12 +267,13 @@ body {
 
 .hero-shimmer-image {
   width: 100px;
-  height: 95px;
-  border-radius: 16px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 .hero-shimmer-label {
-  width: 82px;
+  /* width: 82px; */
+  width: 30px;
   height: 14px;
   border-radius: 999px;
 }
@@ -328,7 +334,7 @@ body {
   }
 }
 
-/* Restaurant Cards Container------------------------------------------------*/
+/* Restaurant Cards Container---------------------------------------------------------------------------------------*/
 .rest-cards-container {
   width: 90%;
   max-width: 1400px;
@@ -337,6 +343,11 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+}
+
+/* Remove underline from restaurant card links */
+.res-LINK {
+  text-decoration: none;
 }
 
 /* Restaurant Card*/
@@ -376,6 +387,15 @@ body {
 /* Restaurant Details*/
 .res-det {
   padding: 16px;
+}
+
+.res-name,
+.price,
+.rating,
+.cuisines,
+.sla,
+.location {
+  text-decoration: none;
 }
 
 .res-name {
@@ -853,6 +873,54 @@ body {
   .contact-card {
     padding: 20px;
   }
+}
+
+/* cart design----------------------------------------------------------------------------------------------------------------- */
+.cart-container {
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Restaurant Page desgin---------------------------------------------------------------------------------------------------------*/
+.rest-page-container {
+  background-color: red;
+  height: auto;
+  width: 99vw;
+}
+.rest-page-det {
+  padding: 25px 15px;
+  margin: 0px auto;
+  /* background-color: green; */
+  height: auto;
+  width: 60vw;
+}
+.rest-page-name {
+  font-weight: 700;
+}
+.rest-page-img {
+  margin-top: 10px;
+  height: 55vh;
+  width: 60vw;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.res-page-rating-cost {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.category-container {
+  height: 250px;
+  width: 100%;
+
+  background-color: green;
+  border-radius: 20px;
 }
 
 /* Footer design----------------------------------------------------------------------------------------------------------------- */

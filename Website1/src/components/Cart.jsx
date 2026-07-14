@@ -3,8 +3,8 @@ import Shimmer from "./Shimmer";
 
 const Cart = () => {
   return (
-    <div>
-      <Shimmer />
+    <div className="cart-container">
+      <h3>Your cart is Empty!</h3>
     </div>
   );
 };
