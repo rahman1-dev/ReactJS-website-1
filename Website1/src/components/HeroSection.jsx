@@ -24,7 +24,6 @@ const HeroSection = ({ childData }) => {
   return (
     <div>
       <section className="hero-section">
-        {/* <HeroSectionShimmer /> */}
         <div className="food-container">
           <div className="food-container-head">
             <h2>Order Our Best Food Options</h2>
@@ -46,6 +45,28 @@ const HeroSection = ({ childData }) => {
             ))}
           </div>
         </div>
+
+        {/* <div className="food-container">
+          <div className="food-container-head">
+            <h2>Order Our Best Food Options</h2>
+
+            <div className="left-right-arrows">
+              <button className="arrow-btn" onClick={scrollLeft}>
+                <FaArrowLeft />
+              </button>
+
+              <button className="arrow-btn" onClick={scrollRight}>
+                <FaArrowRight />
+              </button>
+            </div>
+          </div>
+
+          <div className="main-food-cards-container" ref={scrollRef}>
+            {childData.map((food) => (
+              <Cards key={food.id} food={food} />
+            ))}
+          </div>
+        </div> */}
       </section>
     </div>
   );

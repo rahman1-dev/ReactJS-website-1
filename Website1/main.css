@@ -119,7 +119,7 @@ body {
   }
 }
 
-/* Herosection styling */
+/* Herosection styling ----------------------------------------------------------------------------------------------------*/
 .hero-section {
   width: 100%;
   padding: 35px 0;
@@ -129,6 +129,13 @@ body {
 }
 
 .food-container {
+  background-image: url("background.jpg");
+  background-size: cover; /* Makes the image cover the whole screen */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  height: auto;
+  margin: 0;
+
   width: 90%;
   max-width: 1400px;
   background: #ffffff;
@@ -203,22 +210,22 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  /* transform: translateY(-6px); */
 }
 
 .card img {
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 95px;
   object-fit: cover;
-  border-radius: 50%;
+  object-position: top;
   border: 3px solid #fff;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18); */
   transition: all 0.35s ease;
 }
 
 .card:hover img {
   transform: scale(1.08);
-  box-shadow: 0 12px 25px rgba(255, 107, 0, 0.28);
+  /* box-shadow: 0 12px 25px rgba(255, 107, 0, 0.28); */
 }
 
 .card h3 {
@@ -233,21 +240,95 @@ body {
   color: #ff6b00;
 }
 
-/* HeroSectionShimmer Container Styling--------------------------------------- */
-.HeroSectionShimmer-conatiner {
-  /* color: red; */
-  background-color: red;
-}
-.HeroSectionShimmer-conatiner h1 {
-  color: red;
-  font-size: 500px;
+/* HeroSectionShimmer Container Styling--------------------------------------------------------------------------------------- */
+.hero-section-shimmer {
+  min-height: 260px;
+  margin: 25px auto;
 }
 
-.HeroSectionShimmer-container {
-  background-color: red;
+.hero-shimmer-cards {
+  gap: 18px;
+  padding: 6px 0 8px;
 }
 
-/* Restaurant Cards Container*/
+.hero-shimmer-card {
+  flex: 0 0 auto;
+  width: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-shimmer-image {
+  width: 100px;
+  height: 95px;
+  border-radius: 16px;
+}
+
+.hero-shimmer-label {
+  width: 82px;
+  height: 14px;
+  border-radius: 999px;
+}
+
+.shimmer-line,
+.shimmer-circle,
+.shimmer-block {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #ececec 0%, #f6f6f6 50%, #ececec 100%);
+  background-size: 200% 100%;
+  animation: shimmerPulse 1.2s linear infinite;
+}
+
+.shimmer-line::after,
+.shimmer-circle::after,
+.shimmer-block::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmerSweep 1.2s linear infinite;
+}
+
+.shimmer-title {
+  width: 280px;
+  height: 28px;
+  border-radius: 999px;
+}
+
+.shimmer-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+@keyframes shimmerPulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Restaurant Cards Container------------------------------------------------*/
 .rest-cards-container {
   width: 90%;
   max-width: 1400px;
@@ -365,7 +446,7 @@ body {
   }
 }
 
-/* Shimmer Container */
+/* Shimmer Container-------------------------------------------------------------------------------------------------------- */
 .shimmer-container {
   display: grid;
   grid-template-columns: repeat(3, 280px);
@@ -509,7 +590,7 @@ body {
   }
 }
 
-/* Error page styling------------------------------------------------  */
+/* Error page styling-----------------------------------------------------------------------------------------------------  */
 .error-page {
   min-height: 100vh;
   display: flex;
@@ -552,7 +633,7 @@ body {
   font-size: 15px;
 }
 
-/* About page styling------------------------------------------------------------------------------- */
+/* About page styling------------------------------------------------------------------------------------------------ */
 .about-page {
   padding: 40px 20px 60px;
   background: linear-gradient(135deg, #fff8ef 0%, #fff 100%);
@@ -648,7 +729,7 @@ body {
   }
 }
 
-/* Contact page styling--------------------------------------------------------------------------- */
+/* Contact page styling------------------------------------------------------------------------------------------------------------ */
 .contact-page {
   padding: 40px 20px 60px;
   background: linear-gradient(135deg, #fff9f0 0%, #ffffff 100%);
@@ -774,7 +855,7 @@ body {
   }
 }
 
-/* Footer design-------------------------------------------------------------------------------- */
+/* Footer design----------------------------------------------------------------------------------------------------------------- */
 .footer {
   display: flex;
   justify-content: space-around;

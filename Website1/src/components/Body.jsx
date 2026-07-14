@@ -5,6 +5,7 @@ import Filter from "./Filter";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { swiggyURL } from "../utils/constant";
+import HeroSectionShimmer from "./HeroSectionShimmer";
 
 const Body = () => {
   const [data, setData] = useState(null);
@@ -14,7 +15,7 @@ const Body = () => {
   const fetchApiData = async () => {
     const response = await fetch(swiggyURL);
     const data = await response.json();
-
+    console.log(data);
     // console.log("data: ", data);
     // console.log(
     //   " HeroSection data: ",
@@ -31,12 +32,17 @@ const Body = () => {
   }, []);
 
   if (data === null) {
-    return <Shimmer />;
+    return (
+      <div>
+        <HeroSectionShimmer />
+        <Shimmer />;
+      </div>
+    );
   }
 
   return (
     <div>
-      {/* <HeroSection childData={heroData} /> */}
+      <HeroSection childData={heroData} />
       <Restaurants
         childData={
           data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle

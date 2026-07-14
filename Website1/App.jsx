@@ -10,6 +10,7 @@ const App = () => {
     <div>
       <Navbar />
       <Outlet />
+
       <Footer />
     </div>
   );
