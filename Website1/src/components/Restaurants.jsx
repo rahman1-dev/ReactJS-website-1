@@ -2,6 +2,7 @@ import ResCards from "./ResCards";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
 import { swiggyURL } from "../utils/constant";
+import { Link } from "react-router";
 
 const Restaurants = ({ childData }) => {
   const hotelList = childData;
@@ -13,7 +14,10 @@ const Restaurants = ({ childData }) => {
           <Shimmer />
         ) : (
           hotelList.map((res) => (
-            <ResCards resData={res.info} key={res.info.id} />
+            <Link to={`/restaurantpage/${res?.info?.id}`} key={res?.info?.id}>
+              {console.log(res)}
+              <ResCards resData={res?.info} />
+            </Link>
           ))
         )}
       </div>

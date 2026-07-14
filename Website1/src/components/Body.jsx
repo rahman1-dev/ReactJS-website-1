@@ -15,7 +15,6 @@ const Body = () => {
   const fetchApiData = async () => {
     const response = await fetch(swiggyURL);
     const data = await response.json();
-    console.log(data);
     // console.log("data: ", data);
     // console.log(
     //   " HeroSection data: ",
