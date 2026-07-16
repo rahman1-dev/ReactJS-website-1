@@ -17,8 +17,6 @@ const RestaurantMenuInfo = ({ menu }) => {
     costForTwoMessage,
   } = menu?.data?.cards[2]?.card?.card?.info;
 
-  
-
   return (
     <div className="rest-page-container">
       <div className="rest-page-det">
@@ -29,10 +27,12 @@ const RestaurantMenuInfo = ({ menu }) => {
           alt="res-image"
         />
 
-        <h4>
-          🌟 {avgRatingString} ({totalRatingsString})
-        </h4>
-        <h4>{cuisines?.join(", ")}</h4>
+        <div className="res-menu-details">
+          <h4>
+            ⭐{avgRatingString} ({totalRatingsString})
+          </h4>
+          <h4>{cuisines?.join(", ")}</h4>
+        </div>
       </div>
     </div>
   );

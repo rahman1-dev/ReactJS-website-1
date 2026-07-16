@@ -247,6 +247,7 @@ body {
 /* HeroSectionShimmer Container Styling--------------------------------------------------------------------------------------- */
 .hero-section-shimmer {
   /* min-height: 260px; */
+  background: #ffffff;
   min-height: 200px;
   margin: 35px auto;
 }
@@ -891,9 +892,9 @@ body {
   width: 99vw;
 }
 .rest-page-det {
+  /* background-color: green; */
   padding: 25px 15px;
   margin: 0px auto;
-  /* background-color: green; */
   height: auto;
   width: 60vw;
 }
@@ -906,6 +907,7 @@ body {
   width: 60vw;
   object-fit: cover;
   border-radius: 20px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
 }
 .res-page-rating-cost {
   margin-top: 10px;
@@ -913,6 +915,11 @@ body {
   display: flex;
   gap: 10px;
   font-weight: 700;
+}
+.res-menu-details {
+  margin-top: 20px;
+  font-size: 18px;
+  padding-left: 5px;
 }
 /* Restaurant-category-container------------------------------------------------------------------------------------------------- */
 .rest-category-container {
@@ -958,8 +965,8 @@ body {
   gap: 10px;
   padding-left: 15px;
 }
-.menu-image{
-  width:100px
+.menu-image {
+  width: 100px;
 }
 .menu-image img {
   height: 100px;
@@ -969,10 +976,10 @@ body {
 }
 .menu-image button {
   width: 100%;
-  border-radius:5px ;
+  border-radius: 5px;
   outline: none;
   border: none;
-  padding:3px 0px;
+  padding: 3px 0px;
 }
 .menu-image button:hover {
   background-color: rgb(202, 193, 193);

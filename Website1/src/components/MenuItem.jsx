@@ -7,6 +7,7 @@ const MenuItem = ({ details }) => {
   const {
     id,
     name,
+    price,
     defaultPrice,
     finalPrice,
     category,
@@ -19,7 +20,7 @@ const MenuItem = ({ details }) => {
     <div className="menu-item-conatiner">
       <div className="menu-item-details">
         <h3>{name}</h3>
-        <h4>₹{finalPrice / 100}</h4>
+        <h4>₹{price / 100 || finalPrice / 100 || defaultPrice / 100}</h4>
         <h5>
           ⭐{ratings.aggregatedRating.rating}(
           {ratings.aggregatedRating.ratingCount})
