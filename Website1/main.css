@@ -884,9 +884,9 @@ body {
   justify-content: center;
 }
 
-/* Restaurant Page desgin---------------------------------------------------------------------------------------------------------*/
+/* Restaurant-Menu-Info desgin---------------------------------------------------------------------------------------------------------*/
 .rest-page-container {
-  background-color: red;
+  /* background-color: red; */
   height: auto;
   width: 99vw;
 }
@@ -914,13 +914,80 @@ body {
   gap: 10px;
   font-weight: 700;
 }
-
-.category-container {
-  height: 250px;
-  width: 100%;
-
-  background-color: green;
+/* Restaurant-category-container------------------------------------------------------------------------------------------------- */
+.rest-category-container {
+  height: auto;
+  width: 85%;
+  margin: 10px 0px;
+  /* border: 1px solid black; */
+  /* background-color: green; */
+  /* background-color: green; */
+  background-color: #f4f4f4;
   border-radius: 20px;
+}
+.category-header {
+  padding: 10px 15px;
+  /* background-color: yellow; */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.category-body {
+  height: 100%;
+  /* background-color: pink; */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px 15px;
+}
+.menu-item-conatiner {
+  /* border: 1px solid black; */
+  background-color: #ff9000;
+  /* background-color: rgb(245, 92, 37); */
+  height: auto;
+  margin: 7px 0px;
+  border-radius: 20px;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 15px;
+}
+.menu-image{
+  width:100px
+}
+.menu-image img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.menu-image button {
+  width: 100%;
+  border-radius:5px ;
+  outline: none;
+  border: none;
+  padding:3px 0px;
+}
+.menu-image button:hover {
+  background-color: rgb(202, 193, 193);
+  cursor: pointer;
+}
+
+/* Rest Menu design ----------------------------------------------------------------------------------------------------------*/
+.rest-menu-container {
+  margin: 0px auto;
+  /* background-color: red; */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Footer design----------------------------------------------------------------------------------------------------------------- */

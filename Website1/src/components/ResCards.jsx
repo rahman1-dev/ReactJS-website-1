@@ -1,6 +1,8 @@
 import { imgBaseURL } from "../utils/constant";
 
 const ResCards = ({ resData }) => {
+  // console.log("from resCard", resData);
+
   const {
     name,
     areaName,

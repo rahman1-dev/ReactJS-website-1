@@ -7,10 +7,10 @@ import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import Cart from "./src/components/Cart";
 import Error from "./src/components/Error";
-import RestaurantPage from "./src/components/RestaurantPage";
 import SignUp from "./src/components/SignUp";
 import SignIn from "./src/components/SignIn";
 import Auth from "./src/components/Auth";
+import RestaurantMenu from "./src/components/RestaurantMenu";
 
 const appRouter = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const appRouter = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
       { path: "/cart", element: <Cart /> },
-      { path: "/restaurantpage/:resId", element: <RestaurantPage /> },
+      { path: "/restaurantmenu/:resId", element: <RestaurantMenu /> },
       {
         path: "/auth",
         element: <Auth />,
