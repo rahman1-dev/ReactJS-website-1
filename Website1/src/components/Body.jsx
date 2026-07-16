@@ -6,9 +6,14 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { swiggyURL } from "../utils/constant";
 import HeroSectionShimmer from "./HeroSectionShimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [data, setData] = useState(null);
+
+  const networkStatus = useOnlineStatus();
+  console.log("network", networkStatus);
+
   const heroData =
     data?.data?.cards?.[0]?.card?.card?.imageGridCards?.info || [];
 
@@ -21,6 +26,22 @@ const Body = () => {
   useEffect(() => {
     fetchApiData();
   }, []);
+
+  if (!networkStatus) {
+    return (
+      <div className="body">
+        <h1
+          style={{
+            padding: "10vh 1.5rem",
+            textAlign: "center",
+            height: "50vh",
+          }}
+        >
+          🔴 You are offline. Please check your internet connection.
+        </h1>
+      </div>
+    );
+  }
 
   if (data === null) {
     return (

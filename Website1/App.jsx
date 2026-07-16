@@ -6,6 +6,7 @@ import Body from "./src/components/Body";
 import { Outlet } from "react-router";
 
 const App = () => {
+
   return (
     <div>
       <Navbar />

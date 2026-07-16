@@ -22,17 +22,6 @@ const RestaurantCategory = ({ categoryInfo }) => {
           <FaAngleDown />
         </div>
       </div>
-      {/* 
-      <div className="category-body">
-        {itemCards.map((singleMenu) => {
-          return (
-            <MenuItem
-              details={singleMenu.card.info}
-              key={singleMenu.card.info.id}
-            />
-          );
-        })}
-      </div> */}
 
       {isVisible ? (
         <div className="category-body">
