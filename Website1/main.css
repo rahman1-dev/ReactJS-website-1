@@ -958,12 +958,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 .menu-item-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   padding-left: 15px;
+  gap: 10px;
+}
+.menu-item-details h5 {
+  color: rgb(19, 88, 19);
+}
+.menu-item-details span {
+  margin-right: 8px;
+  background-color: rgb(19, 88, 19);
+  padding: 3px 10px;
+  border-radius: 15px;
 }
 .menu-image {
   width: 100px;
@@ -980,6 +990,8 @@ body {
   outline: none;
   border: none;
   padding: 3px 0px;
+  background-color: rgb(19, 88, 19);
+  color: white;
 }
 .menu-image button:hover {
   background-color: rgb(202, 193, 193);

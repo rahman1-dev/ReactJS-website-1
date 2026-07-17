@@ -7,6 +7,7 @@ import Shimmer from "./Shimmer";
 import { swiggyURL } from "../utils/constant";
 import HeroSectionShimmer from "./HeroSectionShimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { IoCloudOfflineOutline } from "react-icons/io5";
 
 const Body = () => {
   const [data, setData] = useState(null);
@@ -37,7 +38,8 @@ const Body = () => {
             height: "50vh",
           }}
         >
-          🔴 You are offline. Please check your internet connection.
+          <IoCloudOfflineOutline /> You are offline. Please check your internet
+          connection.
         </h1>
       </div>
     );

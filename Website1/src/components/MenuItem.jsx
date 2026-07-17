@@ -22,7 +22,8 @@ const MenuItem = ({ details }) => {
         <h3>{name}</h3>
         <h4>₹{price / 100 || finalPrice / 100 || defaultPrice / 100}</h4>
         <h5>
-          ⭐{ratings.aggregatedRating.rating}(
+          <span>⭐</span>
+          {ratings.aggregatedRating.rating}(
           {ratings.aggregatedRating.ratingCount})
         </h5>
         <p>{description}</p>

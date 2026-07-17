@@ -3,13 +3,15 @@ import { Link } from "react-router";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://ik.imagekit.io/xw4n3bdg9/logo.png"
-          alt="logo"
-        />
-      </div>
+      <Link to="/">
+        <div className="logo-container">
+          <img
+            className="logo"
+            src="https://ik.imagekit.io/xw4n3bdg9/logo.png"
+            alt="logo"
+          />
+        </div>
+      </Link>
 
       <div className="navElem-conatiner">
         <ul className="nav-links">
