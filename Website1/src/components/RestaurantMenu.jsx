@@ -7,6 +7,9 @@ import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
   const [menu, setMenu] = useState(null);
+
+  const [openIndex, setOpenIndex] = useState(null);
+
   const { resId } = useParams();
 
   useEffect(() => {
@@ -46,16 +49,18 @@ const RestaurantMenu = () => {
     cloudinaryImageId,
   } = menu?.data?.cards[2]?.card?.card?.info;
 
-  // console.log("cat", menu?.data?.cards[2]?.card?.card?.info);
-
   return (
     <div className="rest-menu-container">
       <RestaurantMenuInfo menu={menu} />
 
-      {categories.map((category) => {
+      {categories.map((category, index) => {
         // console.log(category);
         return (
           <RestaurantCategory
+            isOpen={openIndex === index ? true : false}
+            onToggle={() => {
+              setOpenIndex(index);
+            }}
             key={category.card.card.categoryId}
             categoryInfo={category.card.card}
           />

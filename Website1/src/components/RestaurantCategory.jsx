@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import MenuItem from "./MenuItem";
 
-const RestaurantCategory = ({ categoryInfo }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const RestaurantCategory = ({ categoryInfo, isOpen, onToggle }) => {
+  // const [isVisible, setIsVisible] = useState(false);
 
-  const Visibility = () => {
-    setIsVisible(!isVisible);
-    // console.log(isVisible);
-  };
+  const isVisible = isOpen;
+
+  // const Visibility = () => {
+  //   setIsVisible(!isVisible);
+  // };
 
   const { title, itemCards } = categoryInfo;
 
   return (
     <div className="rest-category-container">
-      <div className="category-header" onClick={Visibility}>
+      <div className="category-header" onClick={onToggle}>
         <div>
           {title} ({itemCards.length})
         </div>
