@@ -24,7 +24,7 @@ const MenuItem = ({ details }) => {
         <h5>
           <span>⭐</span>
           {ratings.aggregatedRating.rating}(
-          {ratings.aggregatedRating.ratingCount})
+          {ratings.aggregatedRating.ratingCount || "0"})
         </h5>
         <p>{description}</p>
       </div>

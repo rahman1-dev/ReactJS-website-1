@@ -35,6 +35,11 @@ const Navbar = () => {
               Cart
             </Link>
           </li>
+          <li>
+            <Link className="nav-link" to="/grocery">
+              Grocery
+            </Link>
+          </li>
         </ul>
       </div>
 

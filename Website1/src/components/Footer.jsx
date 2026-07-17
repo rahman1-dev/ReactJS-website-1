@@ -15,6 +15,12 @@ const Footer = () => {
           <FaFacebookSquare />
         </div>
       </div>
+      {/* <img
+        height="200px"
+        width="200px"
+        src="https://assets.bonappetit.com/photos/63a390eda38261d1c3bdc555/1:1/w_2400,h_2400,c_limit/best-food-writing-2022-lede.jpg"
+        alt=""
+      /> */}
     </div>
   );
 };

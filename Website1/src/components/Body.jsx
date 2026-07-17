@@ -13,7 +13,7 @@ const Body = () => {
   const [data, setData] = useState(null);
 
   const networkStatus = useOnlineStatus();
-  console.log("network", networkStatus);
+  // console.log("network", networkStatus);
 
   const heroData =
     data?.data?.cards?.[0]?.card?.card?.imageGridCards?.info || [];
@@ -38,8 +38,8 @@ const Body = () => {
             height: "50vh",
           }}
         >
-          <IoCloudOfflineOutline /> You are offline. Please check your internet
-          connection.
+          <IoCloudOfflineOutline />
+          You are offline. Please check your internet connection.
         </h1>
       </div>
     );

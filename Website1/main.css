@@ -970,13 +970,14 @@ body {
   color: rgb(19, 88, 19);
 }
 .menu-item-details span {
-  margin-right: 8px;
+  margin-right: 3px;
   background-color: rgb(19, 88, 19);
   padding: 3px 10px;
   border-radius: 15px;
 }
 .menu-image {
   width: 100px;
+  padding-right: 20px;
 }
 .menu-image img {
   height: 100px;
@@ -994,7 +995,7 @@ body {
   color: white;
 }
 .menu-image button:hover {
-  background-color: rgb(202, 193, 193);
+  background-color: rgb(41, 107, 41);
   cursor: pointer;
 }
 
@@ -1014,9 +1015,10 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 15vh;
+  height: 20vh;
   background-color: #ff9000;
 }
+
 .social-det {
   /* border: 2px solid black; */
   padding: 5px 5px;
