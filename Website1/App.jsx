@@ -5,10 +5,12 @@ import Footer from "./src/components/Footer";
 import Body from "./src/components/Body";
 import { Outlet } from "react-router";
 
+
 const App = () => {
 
   return (
     <div>
+
       <Navbar />
       <Outlet />
       <Footer />

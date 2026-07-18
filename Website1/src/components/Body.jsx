@@ -8,6 +8,7 @@ import { swiggyURL } from "../utils/constant";
 import HeroSectionShimmer from "./HeroSectionShimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { IoCloudOfflineOutline } from "react-icons/io5";
+import resCardDataContext from "../utils/useResCardContext";
 
 const Body = () => {
   const [data, setData] = useState(null);

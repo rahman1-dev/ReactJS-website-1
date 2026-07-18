@@ -39,7 +39,6 @@ const RestaurantMenu = () => {
         }
       },
     );
-  // console.log("categories", categories);
 
   const {
     name,
@@ -54,10 +53,12 @@ const RestaurantMenu = () => {
       <RestaurantMenuInfo menu={menu} />
 
       {categories.map((category, index) => {
-        // console.log(category);
         return (
           <RestaurantCategory
             isOpen={openIndex === index ? true : false}
+            setIndex={() => {
+              setOpenIndex(index === openIndex ? null : index);
+            }}
             onToggle={() => {
               setOpenIndex(index);
             }}

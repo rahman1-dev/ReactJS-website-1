@@ -1,6 +1,9 @@
 import { Link } from "react-router";
+import userContext from "../utils/userContext";
+import { useContext } from "react";
 
 const Navbar = () => {
+  // const { name, email } = useContext(userContext);
   return (
     <div className="navbar">
       <Link to="/">
@@ -31,15 +34,16 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="nav-link" to="/cart">
-              Cart
-            </Link>
-          </li>
-          <li>
             <Link className="nav-link" to="/grocery">
               Grocery
             </Link>
           </li>
+          <li>
+            <Link className="nav-link" to="/cart">
+              Cart
+            </Link>
+          </li>
+          {/* <li className="nav-link">{name}</li> */}
         </ul>
       </div>
 
