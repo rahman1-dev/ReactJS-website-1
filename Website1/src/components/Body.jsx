@@ -1,28 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
 import HeroSection from "./HeroSection";
 import Restaurants from "./Restaurants";
-import Filter from "./Filter";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { swiggyURL } from "../utils/constant";
 import HeroSectionShimmer from "./HeroSectionShimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { IoCloudOfflineOutline } from "react-icons/io5";
-import resCardDataContext from "../utils/useResCardContext";
+import ResCardContext from "../utils/HotelListContext";
 
 const Body = () => {
-  const [data, setData] = useState(null);
+  const { data, setData, hotelList, setHotelList } = useContext(ResCardContext);
 
   const networkStatus = useOnlineStatus();
-  // console.log("network", networkStatus);
 
-  const heroData =
-    data?.data?.cards?.[0]?.card?.card?.imageGridCards?.info || [];
+
+  
 
   const fetchApiData = async () => {
     const response = await fetch(swiggyURL);
     const data = await response.json();
-    setData(data);
+
+    console.log(
+      "setting data to context: ",
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
+    );
+    setData(
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
+    );
+    setHotelList(
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
+    );
   };
 
   useEffect(() => {
@@ -57,12 +68,13 @@ const Body = () => {
 
   return (
     <div>
-      <HeroSection childData={heroData} />
+      <HeroSection />
       <Restaurants
-        childData={
-          data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
-            ?.restaurants || []
-        }
+        // childData={
+        //   data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        //     ?.restaurants || []
+        // }
+        childData={hotelList}
       />
     </div>
   );

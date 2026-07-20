@@ -1,10 +1,12 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { FoodData } from "../utils/FoodData";
 import Cards from "./Cards";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import HeroSectionShimmer from "./HeroSectionShimmer";
+import HotelListContext from "../utils/HotelListContext";
+import { CiLight } from "react-icons/ci";
 
-const HeroSection = ({ childData }) => {
+const HeroSection = () => {
   const scrollRef = useRef(null);
 
   const scrollLeft = () => {
@@ -19,6 +21,13 @@ const HeroSection = ({ childData }) => {
       behavior: "smooth",
     });
   };
+
+  const {data} = useContext(HotelListContext);
+
+  const heroData =
+  data?.cards?.[0]?.card?.card?.imageGridCards?.info || [];
+
+  console.log("data from hero", data?.cards?.[0]?.card?.card?.imageGridCards?.info)
 
   return (
     <div>
@@ -39,7 +48,7 @@ const HeroSection = ({ childData }) => {
           </div>
 
           <div className="main-food-cards-container" ref={scrollRef}>
-            {childData.map((food) => (
+            {heroData.map((food) => (
               <Cards key={food.id} food={food} />
             ))}
           </div>
