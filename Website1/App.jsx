@@ -7,6 +7,7 @@ import { Outlet } from "react-router";
 import HotelListContext from "./src/utils/HotelListContext";
 import userContext from "./src/utils/userContext";
 import { useContext, useEffect, useState } from "react";
+import Shimmer from "./src/components/Shimmer";
 
 const App = () => {
   const [name, setName] = useState("default user");
@@ -32,6 +33,7 @@ const App = () => {
 
   const [data, setData] = useState([]); //Card data //Master Copy
   const [hotelList, setHotelList] = useState([]); // UI copy
+
 
   return (
     <div>

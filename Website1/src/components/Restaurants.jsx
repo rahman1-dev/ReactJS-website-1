@@ -8,9 +8,9 @@ import HotelListContext from "../utils/HotelListContext";
 const Restaurants = () => {
   const { hotelList } = useContext(HotelListContext);
 
-  if (!hotelList) {
-    return <Shimmer />;
-  }
+  // if (!hotelList) {
+  //   return <Shimmer />;
+  // }
 
   return (
     <div className="restaurant">

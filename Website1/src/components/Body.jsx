@@ -14,18 +14,19 @@ const Body = () => {
 
   const networkStatus = useOnlineStatus();
 
-
-  
+  // if (data === null) {
+  //   return (
+  //     <div>
+  //       {/* <HeroSectionShimmer /> */}
+  //       <Shimmer />;
+  //     </div>
+  //   );
+  // }
 
   const fetchApiData = async () => {
     const response = await fetch(swiggyURL);
     const data = await response.json();
 
-    console.log(
-      "setting data to context: ",
-      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
-    );
     setData(
       data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
@@ -38,6 +39,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchApiData();
+
   }, []);
 
   if (!networkStatus) {
@@ -57,14 +59,14 @@ const Body = () => {
     );
   }
 
-  if (data === null) {
-    return (
-      <div>
-        <HeroSectionShimmer />
-        <Shimmer />;
-      </div>
-    );
-  }
+  // if (data === null) {
+  //   return (
+  //     <div>
+  //       <HeroSectionShimmer />
+  //       <Shimmer />;
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>

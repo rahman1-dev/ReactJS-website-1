@@ -1,12 +1,16 @@
 import { Link } from "react-router";
 import userContext from "../utils/userContext";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import resCardDataContext from "../utils/HotelListContext";
 
 const Navbar = () => {
   const { name, email } = useContext(userContext);
+
   const { data, setData, hotelList, setHotelList } =
     useContext(resCardDataContext);
+  console.log(data);
+
+  const [filterToggle, setFilterToggle] = useState(false);
 
   // console.log(
   //   data?.data?.cards[1].card.card.gridElements.infoWithStyle.restaurants,
@@ -17,6 +21,20 @@ const Navbar = () => {
   // console.log(
   //   data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants,
   // );
+  function SearchFunc(e) {
+    const searchedRes = data.filter((restaurant) => {
+      if (
+        restaurant.info.name
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase()) === true
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    setHotelList(searchedRes);
+  }
 
   return (
     <div className="navbar">
@@ -62,26 +80,33 @@ const Navbar = () => {
       </div>
 
       <div className="search-container">
-        <input type="text" placeholder="Enter Restaurants and Food" />
+        <input
+          onChange={SearchFunc}
+          type="text"
+          placeholder="Enter Restaurants and Food"
+        />
       </div>
 
       <button
         className="top-restaurant-btn"
         onClick={() => {
-          const filteredList = hotelList.filter((resObj) => {
-            if (resObj.info.avgRating > 4.3) {
-              return true;
-            } else {
-              return false;
-            }
-          });
-          setHotelList(filteredList);
-
-          // console.log(hotelList); Why is this not dynamically changing the hotel list
-          console.log(filteredList);
+          if (!filterToggle) {
+            const filteredList = hotelList.filter((resObj) => {
+              if (resObj.info.avgRating > 4.3) {
+                return true;
+              } else {
+                return false;
+              }
+            });
+            setHotelList(filteredList);
+            setFilterToggle(!filterToggle);
+          } else {
+            setHotelList(data);
+            setFilterToggle(!filterToggle);
+          }
         }}
       >
-        Show top restaurant
+        {!filterToggle ? "Show top restaurant" : "Show all"}
       </button>
     </div>
   );

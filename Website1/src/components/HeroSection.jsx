@@ -27,7 +27,7 @@ const HeroSection = () => {
   const heroData =
   data?.cards?.[0]?.card?.card?.imageGridCards?.info || [];
 
-  console.log("data from hero", data?.cards?.[0]?.card?.card?.imageGridCards?.info)
+  // console.log("data from hero", data?.cards?.[0]?.card?.card?.imageGridCards?.info)
 
   return (
     <div>
