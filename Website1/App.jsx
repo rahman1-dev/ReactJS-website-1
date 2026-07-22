@@ -48,13 +48,13 @@ const App = () => {
             setHotelList,
           }}
         >
-          <heroSectionContext.Provider
+          {/* <heroSectionContext.Provider
             value={{ heroSectionData, setHeroSectionData }}
-          >
-            <Navbar />
-            <Outlet />
-            <Footer />
-          </heroSectionContext.Provider>
+          > */}
+          <Navbar />
+          <Outlet />
+          <Footer />
+          {/* </heroSectionContext.Provider> */}
         </HotelListContext.Provider>
       </userContext.Provider>
     </div>

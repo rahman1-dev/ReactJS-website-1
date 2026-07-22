@@ -11,7 +11,6 @@ import ResCardContext from "../utils/HotelListContext";
 
 const Body = () => {
   const { data, setData, hotelList, setHotelList } = useContext(ResCardContext);
-
   const networkStatus = useOnlineStatus();
 
   // if (data === null) {
@@ -58,25 +57,19 @@ const Body = () => {
     );
   }
 
-  // if (data === null) {
-  //   return (
-  //     <div>
-  //       <HeroSectionShimmer />
-  //       <Shimmer />;
-  //     </div>
-  //   );
-  // }
+  if (!hotelList || hotelList.length === 0) {
+    return (
+      <div>
+        {/* <HeroSectionShimmer /> */}
+        <Shimmer />;
+      </div>
+    );
+  }
 
   return (
     <div>
-      <HeroSection />
-      <Restaurants
-        // childData={
-        //   data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        //     ?.restaurants || []
-        // }
-        childData={hotelList}
-      />
+      {/* <HeroSection /> */}
+      <Restaurants childData={hotelList} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import { createContext } from "react";
+// import { createContext } from "react";
 
-const heroSectionContext = createContext(null);
+// const heroSectionContext = createContext(null);
 
-export default heroSectionContext;
+// export default heroSectionContext;
