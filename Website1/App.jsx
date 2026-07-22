@@ -8,6 +8,7 @@ import HotelListContext from "./src/utils/HotelListContext";
 import userContext from "./src/utils/userContext";
 import { useContext, useEffect, useState } from "react";
 import Shimmer from "./src/components/Shimmer";
+import heroSectionContext from "./src/utils/heroSectionContext";
 
 const App = () => {
   const [name, setName] = useState("default user");
@@ -34,6 +35,7 @@ const App = () => {
   const [data, setData] = useState([]); //Card data //Master Copy
   const [hotelList, setHotelList] = useState([]); // UI copy
 
+  const [heroSectionData, setHeroSectionData] = useState(null);
 
   return (
     <div>
@@ -46,9 +48,13 @@ const App = () => {
             setHotelList,
           }}
         >
-          <Navbar />
-          <Outlet />
-          <Footer />
+          <heroSectionContext.Provider
+            value={{ heroSectionData, setHeroSectionData }}
+          >
+            <Navbar />
+            <Outlet />
+            <Footer />
+          </heroSectionContext.Provider>
         </HotelListContext.Provider>
       </userContext.Provider>
     </div>

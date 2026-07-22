@@ -5,6 +5,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import HeroSectionShimmer from "./HeroSectionShimmer";
 import HotelListContext from "../utils/HotelListContext";
 import { CiLight } from "react-icons/ci";
+import heroSectionContext from "../utils/heroSectionContext";
 
 const HeroSection = () => {
   const scrollRef = useRef(null);
@@ -22,10 +23,15 @@ const HeroSection = () => {
     });
   };
 
-  const {data} = useContext(HotelListContext);
+  const { data } = useContext(HotelListContext);
+  const { heroSectionData, setHeroSectionData } =
+    useContext(heroSectionContext);
 
-  const heroData =
-  data?.cards?.[0]?.card?.card?.imageGridCards?.info || [];
+  setHeroSectionData(data?.cards?.[0]?.card?.card?.imageGridCards?.info);
+  console.log("Hero data", heroSectionData);
+
+  // const heroData = data?.cards?.[0]?.card?.card?.imageGridCards?.info || [];
+  // const heroData = heroSectionData;
 
   // console.log("data from hero", data?.cards?.[0]?.card?.card?.imageGridCards?.info)
 

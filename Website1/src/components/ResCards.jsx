@@ -36,4 +36,24 @@ const ResCards = ({ resData }) => {
   );
 };
 
+export const withDiscountLabel = (ResCards) => {
+  function newComponent({ resData }) {
+    const discountInfo = resData?.aggregatedDiscountInfoV3;
+
+    return (
+      <div className="discount-card-wrapper">
+        {discountInfo && (
+          <div className="discount-badge">
+            <span className="discount-header">{discountInfo.header}</span>
+            <span className="discount-subheader">{discountInfo.subHeader}</span>
+          </div>
+        )}
+        <ResCards resData={resData} />
+      </div>
+    );
+  }
+
+  return newComponent;
+};
+
 export default ResCards;

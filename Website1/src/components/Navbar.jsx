@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const { data, setData, hotelList, setHotelList } =
     useContext(resCardDataContext);
-  console.log(data);
+  // console.log(data);
 
   const [filterToggle, setFilterToggle] = useState(false);
 

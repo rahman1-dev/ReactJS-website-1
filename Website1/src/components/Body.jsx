@@ -39,7 +39,6 @@ const Body = () => {
 
   useEffect(() => {
     fetchApiData();
-
   }, []);
 
   if (!networkStatus) {
